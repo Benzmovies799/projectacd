@@ -17,11 +17,11 @@ BOT_TOKEN = 'Get It From Bot Father' #(environ['BOT_TOKEN'],'Replace Same')
 # Bot settings
 CACHE_TIME = int(environ.get('CACHE_TIME', 300))
 USE_CAPTION_FILTER = bool(environ.get('USE_CAPTION_FILTER', True))
-PICS = (environ.get('PICS', 'https://i.postimg.cc/T3yy5TYG/ca142d0a-461e-45d8-90ee-899dc5e4576e.jpg')).split()
+PICS = (environ.get('PICS', 'https://envs.sh/mdw.jpg')).split()
 
 # Admins, Channels & Users
-ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in environ.get('ADMINS', '7727074651 1102431408').split()]
-CHANNELS = [int(ch) if id_pattern.search(ch) else ch for ch in environ.get('CHANNELS', "GIVE CHANNEL IDS BY SPACES").split()]
+ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in environ.get('ADMINS', '957055438').split()]
+CHANNELS = [int(ch) if id_pattern.search(ch) else ch for ch in environ.get('CHANNELS', "-1001677602829 -1002216420190").split()]
 auth_users = [int(user) if id_pattern.search(user) else user for user in environ.get('AUTH_USERS', 'LEAVE EMPTY').split()]
 
 AUTH_USERS = (auth_users + ADMINS) if auth_users else []
@@ -30,19 +30,19 @@ AUTH_CHANNEL = int(auth_channel) if auth_channel and id_pattern.search(auth_chan
 AUTH_GROUPS = [int(admin) for admin in environ.get("AUTH_GROUPS", "").split()]
 
 # MongoDB information
-DATABASE_URI = environ.get('DATABASE_URI', "get it from mongodb")
-DATABASE_NAME = environ.get('DATABASE_NAME', "Musicmechanics")
-COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Telegram_files')
-LOG_CHANNEL = int(environ.get('LOG_CHANNEL', 'log channel id'))
+DATABASE_URI = environ.get('DATABASE_URI', "mongodb+srv://benz:123@clustero.ao34t.mongodb.net/?retryWrites=true&w=majority&appName=clustero")
+DATABASE_NAME = environ.get('DATABASE_NAME', "cluster0")
+COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Benzmawafiles')
+LOG_CHANNEL = int(environ.get('LOG_CHANNEL', '-1001942699601'))
 SUPPORT_CHAT = environ.get('SUPPORT_CHAT', '')
 
-CUSTOM_FILE_CAPTION = environ.get("CUSTOM_FILE_CAPTION", "⚡<b>File uploaded by @TeluguMusicMechanics<b>⚡\n\n🎦 <b>File Name: </b> ➥  {file_caption} \n⚙️ <b>Size: </b><i>{file_size}</i>\n\n                ❤️<b>WE LOVE YOU</b>❤️\n🔥  ↭ <b>Join Now Mana Channel </b> ↭  🔥")
+CUSTOM_FILE_CAPTION = environ.get("CUSTOM_FILE_CAPTION", "⚡<b>File uploaded by @Benzmovies<b>⚡\n\n🎦 <b>File Name: </b> ➥  {file_caption} \n⚙️ <b>Size: </b><i>{file_size}</i>\n\n                ❤️<b>WE LOVE YOU</b>❤️\n🔥  ↭ <b>Join Now Mana Channel </b> ↭  🔥")
 P_TTI_SHOW_OFF = is_enabled((environ.get('P_TTI_SHOW_OFF', "False")), False)
 IMDB = is_enabled((environ.get('IMDB', "False")), False)
 SINGLE_BUTTON = is_enabled((environ.get('SINGLE_BUTTON', "True")), True)
-CUSTOM_FILE_CAPTION = environ.get("CUSTOM_FILE_CAPTION", "⚡<b>File uploaded by @TeluguMusicMechanics<b>⚡\n\n🎦 <b>File Name: </b> ➥  {file_caption} \n⚙️ <b>Size: </b><i>{file_size}</i>\n\n                ❤️<b>WE LOVE YOU</b>❤️\n🔥  ↭ <b>Join Now Mana Channel </b> ↭  🔥")
+CUSTOM_FILE_CAPTION = environ.get("CUSTOM_FILE_CAPTION", "⚡<b>File uploaded by @Benzmovies<b>⚡\n\n🎦 <b>File Name: </b> ➥  {file_caption} \n⚙️ <b>Size: </b><i>{file_size}</i>\n\n                ❤️<b>WE LOVE YOU</b>❤️\n🔥  ↭ <b>Join Now Mana Channel </b> ↭  🔥")
 BATCH_FILE_CAPTION = environ.get("BATCH_FILE_CAPTION", CUSTOM_FILE_CAPTION)
-IMDB_TEMPLATE = environ.get("IMDB_TEMPLATE", "𝐇𝐞𝐲 {message.from_user.mention}, \n 𝐇𝐞𝐫𝐞 𝐢𝐬 𝐭𝐡𝐞 𝐫𝐞𝐬𝐮𝐥𝐭 𝐟𝐨𝐫 𝐲𝐨𝐮𝐫 {query} \n <b>🏷 𝐓𝐢𝐭𝐥𝐞</b>: <a href={url}>{title}</a> \n 📆 𝐘𝐞𝐚𝐫: <a href={url}/releaseinfo>{year}</a> \n 🌟 𝐑𝐚𝐭𝐢𝐧𝐠: <a href={url}/ratings>{rating}</a> / 10 (𝐛𝐚𝐬𝐞𝐝 𝐨𝐧 {votes} 𝐮𝐬𝐞𝐫 𝐫𝐚𝐭𝐢𝐧𝐠𝐬.) \n ☀️ 𝐋𝐚𝐧𝐠𝐮𝐚𝐠𝐞𝐬 : <code>{languages}</code> \n 📀 𝐑𝐮𝐧𝐓𝐢𝐦𝐞: {runtime} 𝐌𝐢𝐧𝐮𝐭𝐞𝐬 \n 📆 𝐑𝐞𝐥𝐞𝐚𝐬𝐞 𝐈𝐧𝐟𝐨 : {release_date} \n 🎛 𝐂𝐨𝐮𝐧𝐭𝐫𝐢𝐞𝐬 : <code>{countries}</code> \n \n 🙋𝐑𝐞𝐪𝐮𝐞𝐬𝐭𝐞𝐝 𝐛𝐲 : {message.from_user.mention} \n 𝐖𝐢𝐭𝐡 𝐋𝐨𝐯𝐞 @𝐓𝐆_𝐌𝐨𝐯𝐢𝐞𝐬𝟒𝐮❤️")
+IMDB_TEMPLATE = environ.get("IMDB_TEMPLATE", "𝐇𝐞𝐲 {message.from_user.mention}, \n 𝐇𝐞𝐫𝐞 𝐢𝐬 𝐭𝐡𝐞 𝐫𝐞𝐬𝐮𝐥𝐭 𝐟𝐨𝐫 𝐲𝐨𝐮𝐫 {query} \n <b>🏷 𝐓𝐢𝐭𝐥𝐞</b>: <a href={url}>{title}</a> \n 📆 𝐘𝐞𝐚𝐫: <a href={url}/releaseinfo>{year}</a> \n 🌟 𝐑𝐚𝐭𝐢𝐧𝐠: <a href={url}/ratings>{rating}</a> / 10 (𝐛𝐚𝐬𝐞𝐝 𝐨𝐧 {votes} 𝐮𝐬𝐞𝐫 𝐫𝐚𝐭𝐢𝐧𝐠𝐬.) \n ☀️ 𝐋𝐚𝐧𝐠𝐮𝐚𝐠𝐞𝐬 : <code>{languages}</code> \n 📀 𝐑𝐮𝐧𝐓𝐢𝐦𝐞: {runtime} 𝐌𝐢𝐧𝐮𝐭𝐞𝐬 \n 📆 𝐑𝐞𝐥𝐞𝐚𝐬𝐞 𝐈𝐧𝐟𝐨 : {release_date} \n 🎛 𝐂𝐨𝐮𝐧𝐭𝐫𝐢𝐞𝐬 : <code>{countries}</code> \n \n 🙋𝐑𝐞𝐪𝐮𝐞𝐬𝐭𝐞𝐝 𝐛𝐲 : {message.from_user.mention} \n 𝐖𝐢𝐭𝐡 𝐋𝐨𝐯𝐞 @Benzmovies❤️")
 LONG_IMDB_DESCRIPTION = is_enabled(environ.get("LONG_IMDB_DESCRIPTION", "False"), False)
 SPELL_CHECK_REPLY = is_enabled(environ.get("SPELL_CHECK_REPLY", "True"), True)
 MAX_LIST_ELM = environ.get("MAX_LIST_ELM", None)
